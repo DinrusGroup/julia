@@ -31,123 +31,122 @@ Code coverage:
 [codecov-img]: https://img.shields.io/codecov/c/github/JuliaLang/julia/master.svg?label=codecov "Code coverage (Codecov)"
 [codecov-url]: https://codecov.io/github/JuliaLang/julia?branch=master
 
-## The Julia Language
+## Язык Julia
 
-Julia is a high-level, high-performance dynamic language for technical
-computing.  The main homepage for Julia can be found at
-[julialang.org](https://julialang.org/).  This is the GitHub
-repository of Julia source code, including instructions for compiling
-and installing Julia, below.
+Julia - это высокоуровневый, высокопроизводительный динамический язык для технических
+расчётов. Главную домашнюю страницу Julia можно найти здесь -
+[julialang.org](https://julialang.org/).  Это репозиторий GitHub
+с руссифицированным исходным кодом Julia, включающая инструкции для компилирования
+и установки Julia, приведённые ниже.
 
-## Resources
+## Ресурсы
 
-- **Homepage:** <https://julialang.org>
-- **Binaries:** <https://julialang.org/downloads/>
-- **Source code:** <https://github.com/JuliaLang/julia>
-- **Documentation:** <https://docs.julialang.org>
-- **Packages:** <https://julialang.org/packages/>
-- **Discussion forum:** <https://discourse.julialang.org>
+- **Домашняя странице:** <https://julialang.org>
+- **Бинарники:** <https://julialang.org/downloads/>
+- **Исходный код:** <https://github.com/JuliaLang/julia>
+- **Документация:** <https://docs.julialang.org>
+- **Пакеты:** <https://julialang.org/packages/>
+- **Дискуссионный форум** <https://discourse.julialang.org>
 - **Slack:** <https://julialang.slack.com> (get an invite from <https://julialang.org/slack/>)
 - **YouTube:** <https://www.youtube.com/user/JuliaLanguage>
 - **Code coverage:** <https://coveralls.io/r/JuliaLang/julia>
 
-New developers may find the notes in
-[CONTRIBUTING](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md)
-helpful to start contributing to the Julia codebase.
+Новые разработчики могут найти заметки в файле
+[CONTRIBUTING](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md) ,
+которые помогут начать делать вклад в кодовую базу Julia.
 
-### External Resources
+### Внешние ресурсы
 
 - [**StackOverflow**](https://stackoverflow.com/questions/tagged/julia-lang)
 - [**Twitter**](https://twitter.com/JuliaLanguage)
-- [**Learning resources**](https://julialang.org/learning/)
+- [**Образовательные ресурсы**](https://julialang.org/learning/)
 
-## Binary Installation
+## Бинарная Установка
 
-If you would rather not compile the latest Julia from source,
-platform-specific tarballs with pre-compiled binaries are also
-[available for download](https://julialang.org/downloads/). The
-downloads page also provides details on the
-[different tiers of support](https://julialang.org/downloads/#support-tiers)
-for OS and platform combinations.
+Если у вас нет желания компилировать из исходников последнейшую версию Julia,
+также [доступны для загрузки](https://julialang.org/downloads/) прекомпилированные
+платформо-зависимые бинарные файлы. На странице загрузки также приведены детали
+[по различным tiers of support](https://julialang.org/downloads/#support-tiers)
+для комбинаций ОС и платформы.
 
-If everything works correctly, you will see a Julia banner and an
-interactive prompt into which you can enter expressions for
-evaluation.  You can read about [getting
-started](https://docs.julialang.org/en/v1/manual/getting-started/) in the manual.
+если всё отлично работает, то вы увидете баннер Julia и
+интерактивный промпт, в который можно вводить выражения для
+обработки. Можно прочесть о том, [как начать](https://docs.julialang.org/en/v1/manual/getting-started/) в этом руководстве.
 
-**Note**: Although some system package managers provide Julia, such
+**Примечание**: Although some system package managers provide Julia, such
 installations are neither maintained nor endorsed by the Julia
 project. They may be outdated, broken and/or unmaintained. We
 recommend you use the official Julia binaries instead.
 
-## Building Julia
+## Построение Julia
 
-First, make sure you have all the [required
-dependencies](https://github.com/JuliaLang/julia/blob/master/doc/src/devdocs/build/build.md#required-build-tools-and-external-libraries) installed.
-Then, acquire the source code by cloning the git repository:
+Сначала убедитесь, что у вас есть и установлены все [необходимые
+зависимости](https://github.com/JuliaLang/julia/blob/master/doc/src/devdocs/build/build.md#required-build-tools-and-external-libraries).
+Затем обретите исходный код, клонировав данный репозиторий git:
 
     git clone https://github.com/JuliaLang/julia.git
 
-By default you will be building the latest unstable version of
-Julia. However, most users should use the [most recent stable version](https://github.com/JuliaLang/julia/releases)
-of Julia. You can get this version by changing to the Julia directory
-and running:
+По умолчанию вы будете строить последнейшую нестабильную версию
+Julia. Однако для большинства пользователей подойдёт [самая свежая стабильная версия](https://github.com/JuliaLang/julia/releases)
+интерпретатора Julia. Эту версию можно получить, перейдя в папку Julia
+и выполнив:
 
     git checkout v1.7.0
 
-Now run `make` to build the `julia` executable.
+Теперь запустите `make`, чтобы построить исполнимый файл `julia`.
 
-Building Julia requires 2GiB of disk space and approximately 4GiB of virtual memory.
+Для построения Julia требуется 2GiB дискового пространства и приблизительно 4GiB виртуальной памяти.
 
-**Note:** The build process will fail badly if any of the build directory's parent directories have spaces or other shell meta-characters such as `$` or `:` in their names (this is due to a limitation in GNU make).
+**Примечание:** Процесс построения будет неудачен, если родительские папки папки построения
+включают в свой путь пробелы или другие мета-символы оболочки, такие как `$` или `:` (это ограничения GNU make).
 
-Once it is built, you can run the `julia` executable after you enter your julia directory and run
+Как только построение окончено, можно выполнить исполнимый файл `julia`, если войти в папку с julia и написать 
 
     ./julia
 
-Your first test of Julia determines whether your build is working
-properly. From the UNIX/Windows command prompt inside the `julia`
-source directory, type `make testall`. You should see output that
-lists a series of running tests; if they complete without error, you
-should be in good shape to start using Julia.
+Первый тест Julia определяет, насколько удачно построение.
+Из командной строки UNIX/Windows внутри папки с исходниками `julia`,
+наберите команду `make testall`. Вы должны увидеть вывод, перечисляющий
+серию выполняемых тестов; если они завершаются без ошибок, то
+можно приступать к использованию Julia.
 
-You can read about [getting
-started](https://docs.julialang.org/en/v1/manual/getting-started/)
-in the manual.
+Можно прочесть о  [начале
+работы](https://docs.julialang.org/en/v1/manual/getting-started/)
+в этом руководстве.
 
-Detailed build instructions, should they be necessary,
-are included in the [build documentation](https://github.com/JuliaLang/julia/blob/master/doc/src/devdocs/build/).
+Детальный инструкции по построению, если необходимо,
+включены в [документацию по построению](https://github.com/JuliaLang/julia/blob/master/doc/src/devdocs/build/).
 
-### Uninstalling Julia
+### Удаление Julia
 
-Julia does not install anything outside the directory it was cloned
-into. Julia can be completely uninstalled by deleting this
-directory. Julia packages are installed in `~/.julia` by default, and
-can be uninstalled by deleting `~/.julia`.
+Julia не устанавливает ничего вне папки, в которую она клонирована.
+Julia можно полностью удалить, удалив эту папку.
+Пакеты Julia устанавливаются в `~/.julia` по умолчанию, их
+можно удалить, удалив `~/.julia`.
 
-## Source Code Organization
+## Организация Исходного Кода
 
-The Julia source code is organized as follows:
+Исмодный код Julia организован следующим образом:
 
-| Directory         | Contents                                                           |
-| -                 | -                                                                  |
-| `base/`           | source code for the Base module (part of Julia's standard library) |
-| `stdlib/`         | source code for other standard library packages                    |
-| `cli/`            | source for the command line interface/REPL                         |
-| `contrib/`        | miscellaneous scripts                                              |
-| `deps/`           | external dependencies                                              |
-| `doc/src/`        | source for the user manual                                         |
-| `src/`            | source for Julia language core                                     |
-| `test/`           | test suites                                                        |
-| `usr/`            | binaries and shared libraries loaded by Julia's standard libraries |
+| Папка         | Содержимое                                                                           |
+| -                 | -                                                                                |
+| `base/`           | исходный код модуля Base (часть стандартной библиотеки Julia)                    |
+| `stdlib/`         | исходный код для других пакетов стандартной библиотеки                           |
+| `cli/`            | исходник интерфейса командной строки interface/REPL                              |
+| `contrib/`        | различные сценарии                                                               |
+| `deps/`           | внешнии зависимости                                                              |
+| `doc/src/`        | исходник руководства пользователя                                                |
+| `src/`            | исходники ядра языка Julia                                                       |
+| `test/`           | тестовые наборы                                                                  |
+| `usr/`            | бинарники и динамические библиотеки, загружаемые стандартными библиотеками Julia |
 
-## Terminal, Editors and IDEs
+## Терминал, Редакторы и IDE
 
-The Julia REPL is quite powerful. See the section in the manual on
-[the Julia REPL](https://docs.julialang.org/en/v1/stdlib/REPL/)
-for more details.
+Julia REPL довольно мошный. Смотрите раздел в руководстве на сайте
+[Julia REPL](https://docs.julialang.org/en/v1/stdlib/REPL/) ,
+чтобы узнатьподробности.
 
-On Windows we highly recommend running Julia in a modern terminal,
+На Windows we highly recommend running Julia in a modern terminal,
 such as [Windows Terminal from the Microsoft Store](https://aka.ms/terminal).
 
 Support for editing Julia is available for many
